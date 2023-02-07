@@ -13,9 +13,6 @@ win=tk.Tk()
 win.geometry('700x700')
 win.title('Registration Form')
 
-
-
-
 var2=''
 l1=tk.Label(win,text="")
 
@@ -34,11 +31,7 @@ def selection():
       
       var2='Other'
       
-    
-    
-   
-   
-
+     
 def submit():
     #l1.config(text="Form Submitted Successfully....!!", font=("arial bold",15),foreground='red')
     if n1.get()=='' :
@@ -69,10 +62,8 @@ def submit():
         tree.heading("# 4", text="Gender")
         tree.column("# 5", anchor=CENTER)
         tree.heading("# 5", text="Password")
-        
-        
-        
-        
+       
+         
         tree.insert('', 'end', text="1", values=(n1.get(),e1.get(), m1.get(),var2,p1.get(),p2.get()))
         tree.pack()
 
@@ -97,14 +88,11 @@ p2=tk.StringVar()
 en_pass2=tk.Entry(win,show='.',textvariable=p2)
 
 
-
 radio =tk.IntVar()
 
 g1=tk.Radiobutton(win,text="Male",variable=radio,value=1,padx=5,pady=5, font=("arial",15),command=lambda:selection())
 g2=tk.Radiobutton(win,text="Female",variable=radio,value=2,padx=5,pady=5, font=("arial",15),command=lambda:selection())
 g3=tk.Radiobutton(win,text="Other",variable=radio,value=3,padx=5,pady=5, font=("arial",15),command=lambda:selection())
-
-
 
 
 button=tk.Button(win,text="Submit" ,font=("arial",15),command=lambda:submit(),padx=5,pady=5,bg='Yellow')
@@ -129,7 +117,5 @@ g3.grid(row=9,column=4)
 
 button.grid(row=20 ,column=1)
 l1.grid(row=27,column=1)
-
-
 
 win.mainloop()
